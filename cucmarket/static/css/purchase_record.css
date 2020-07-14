@@ -1,0 +1,20 @@
+.list_body p{
+    font-family: "Microsoft Yahei";
+    font-size: 24px;
+    color: #504A4D;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.list_body {
+    padding: 20px;
+}
+
+.tab-content {
+    margin-top: 100px;
+    margin-left: 20px;
+}
+
+.list_body ul {
+    width: 750px;
+}

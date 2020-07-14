@@ -1,0 +1,41 @@
+.search_main>p{
+    font-size: 24px;
+    font-weight: 800;
+    font-family: "Microsoft Yahei";
+    color: #504A4D;
+    margin-bottom: 20px;
+    margin: 20px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #504A4D;
+}
+
+.search_main {
+    margin-left: 10%;
+    width: 1200px;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 100px;
+}
+
+.pic {
+    width: 1100px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.pic_in {
+    float: left;
+    margin: 25px;
+}
+
+.pic_in a {
+    display: block;
+    margin-top: 5px;
+    margin-left: 3px;
+    font-size: 16px;
+}
+
+.r_btn {
+    position: relative;
+    left: 920px;
+}

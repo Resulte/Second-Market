@@ -1,0 +1,75 @@
+.log_in {
+    width: 500px;
+    height: 280px;
+    border: 2px solid #e4ecf3;
+    box-shadow: 1px 2px 3px #f2f6f8;
+    margin: 100px auto;
+}
+
+.text-center {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: "Microsoft Yahei";
+    color: #504A4D;
+    margin-bottom: 20px;
+    margin: 20px;
+    margin-bottom: 30px;
+}
+
+.log_in input {
+    display: block;
+    margin: 20px auto;
+}
+
+.log_in a {
+    color: red;
+    margin-left: 215px;
+}
+
+.log_in button {
+    display: block;
+    margin: 20px auto;
+}
+
+.re_in button {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.re_in input {
+    display: block;
+    margin: 20px auto;
+}
+
+.re_in {
+    width: 500px;
+    height: 350px;
+    border: 2px solid #e4ecf3;
+    box-shadow: 1px 2px 3px #f2f6f8;
+    margin: 100px auto;
+} 
+
+
+
+
+.code input {
+    display: inline;
+    width: 80px;
+    margin-left: 160px;
+    position: relative;
+    top: -10px;
+}
+
+.code {
+    margin: 0;
+    padding: 0;
+}
+
+.code button {
+    display: inline;
+}
+.user_error{float:left;height:10px;line-height:10px;margin-top:-15px;margin-left:160px;color:#e62e2e;}
+
+
+.pwd_error{float:left;height:10px;line-height:10px;margin-top:-15px;margin-left:160px;color:#e62e2e;display:none;}

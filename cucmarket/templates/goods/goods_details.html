@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/static/css/head.css" >
+    <link rel="stylesheet" href="/static/css/goos_details.css" >
+    <link rel="stylesheet" href="/static/css/file.css" >
+</head>
+<body>
+        <div class="nav_head">
+            {%if request.session.username|default:'' != ''%}
+            <P>欢迎您，{{ request.session.username }}</P>
+            <button class="btn btn-default"><a href="/user/logout" >退出</a></button>
+            {%else%}
+            <a class="btn btn-link"  href="/user/login" >登陆</a>
+            <a class="btn btn-link"  href="/user/register" >注册</a>
+            {%endif%}
+            <div class="nav dropdown">
+                <a class="btn btn-link"  href="/user/user_center">| 用户中心</a>
+            </div>
+            <div class="nav">
+                <a class="btn btn-link"  href="/" >首页</a>
+            </div>
+        </div>
+        <div class="title">
+            <img src="/static/img/title.png">
+            <div class="second_title">
+                <div class="find">
+                    <input type="text" class="form-control" id="search" >
+                    <a type="button" class="btn btn-warning" id="search-button" href="javascript:void(0);" onclick="go_search()">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+                    <button type="button" class="btn btn-warning"><a href="/release_goods">发布闲置</a></button>
+                </div>
+            </div>      
+        </div>
+        <!-- 返回最上开始 -->
+        <div class="back_to_top">
+            <a href="#"><img src="/static/img/index-回到最上.png"></a>
+        </div>
+        <!-- 返回最上结束 -->
+    <div class="details">
+        <p class="details_title">商品详情</p>
+        <hr style="height : 10px"/>
+        <div style="height: 450px;">
+            <div class="goods" style="float: left; ">
+                <img src="/static/{{ good.picture }}" style="height: 426px; width: 312px" >
+            </div>
+            <div class="attribute" style="float: right">
+                <p><b>商品名称：</b><span>{{ good.title }}</span></p>
+                <p><b>商品价格：</b><span>{{ good.price }}</span></p>
+                <p><b>交易地点：</b><span>{{ good.address }}</span></p>
+                <p><b>商家昵称：</b><span>{{ good.user.username }}</span></p>
+            </div>
+
+        </div>
+
+        <button type="button" class="btn btn-warning btn-lg" style="float: right; margin: 5px"><a href="/user/cart?title={{ good.title }}" style="color: white">加入购物车</a></button>
+        <button type="button" class="btn btn-warning btn-lg" style="float: right; margin: 5px"><a href="/" style="color: white">点击购买</a></button>
+
+
+        <p class="details_title">详情描述</p>
+        <hr/>
+        <div class="attribute_goods">
+			{{ good.description }}
+        </div>
+
+    </div>
+
+        <!-- foot -->
+    <div class="foot">
+        <img src="/static/img/title2.png">
+        <p>来校园二货，你的闲置能换钱！</p>
+        <span>全国最大最活跃的校园闲置物品交换平台</span>
+    </div>
+    <address>
+        Written by <a href="#">Resulte</a>.<br>
+            Visit us at:<br>
+            jxsf University<br>
+            tel：18××××××××69
+    </address>
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+</body>
+</html>

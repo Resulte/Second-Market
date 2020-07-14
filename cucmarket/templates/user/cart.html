@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>校园二货-购物车</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="/static/css/file.css" >
+</head>
+<body>
+	<div class="nav_head">
+        {%if request.session.username|default:'' != ''%}
+            <P>欢迎您，{{ request.session.username }}</P>
+            <button class="btn btn-default"><a href="/user/logout" >退出</a></button>
+        {%else%}
+        <a class="btn btn-link"  href="/user/login" >登陆</a>
+        <a class="btn btn-link"  href="/user/register" >注册</a>
+        {%endif%}
+        <div class="nav dropdown">
+            <a class="btn btn-link"  href="/user/user_center" >| 用户中心</a>
+        </div>
+        <div class="nav">
+            <a class="btn btn-link"  href="/" >首页</a>
+        </div>
+    </div>
+    <div class="title">
+        <img src="/static/img/title.png">
+
+        <div class="second_title">
+{#            #}
+            <div class="find">
+                <input type="text" class="form-control" id="search" >
+                <a type="button" class="btn btn-warning" id="search-button" href="javascript:void(0);" onclick="go_search()">
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+                <button type="button" class="btn btn-warning"><a href="/release_goods">发布闲置</a></button>
+            </div>
+        </div>
+    </div>
+    <!-- 返回最上开始 -->
+    <div class="back_to_top">
+        <a href="#"><img src="/static/img/index-回到最上.png"></a>
+    </div>
+    <!-- 返回最上结束 -->
+
+{#	<div class="search_bar clearfix">#}
+{#		<a href="/" class="logo fl"><img src="/static/img/title.png"></a>#}
+{#		#}
+{#		<div class="search_con fr">#}
+{#			<input type="text" class="input_text fl" name="" placeholder="搜索商品">#}
+{#			<input type="button" class="input_btn fr" name="" value="搜索">#}
+{#		</div>		#}
+{#	</div>#}
+	<div class="total_count">|&nbsp;&nbsp;&nbsp;&nbsp;购物车&nbsp;&nbsp;&nbsp;&nbsp;全部商品<em>1</em>件</div>
+	<ul class="cart_list_th clearfix">
+		<li class="col01">商品名称</li>
+		<li class="col02">商品类型</li>
+		<li class="col03">商品价格</li>
+		<li class="col04">数量</li>
+		<li class="col05">小计</li>
+		<li class="col06">操作</li>
+	</ul>
+    {% for cart in carts %}
+	<ul class="cart_list_td clearfix">
+		<li class="col01"><input type="checkbox" name="" checked></li>
+		<li class="col02"><img src="/static/{{ cart.good.picture }}"></li>
+		<li class="col03">{{ cart.good.title }}</li>
+		<li class="col04">{{ cart.good.type }}</li>
+		<li class="col05">{{ cart.good.price }}元</li>
+		<li class="col06">
+			<div class="num_add">
+				<a href="javascript:;" class="add fl">+</a>
+				<input type="text" class="num_show fl" value="1">	
+				<a href="javascript:;" class="minus fl">-</a>	
+			</div>
+		</li>
+		<li class="col07">{{ cart.good.price }}元</li>
+		<li class="col08"><a href="/user/delete_cart?title={{ cart.title }}">删除</a></li>
+	</ul>
+    {% endfor %}
+	<ul class="settlements">
+		<li class="col01"><input type="checkbox" name="" checked=""></li>
+		<li class="col02">全选</li>
+		<li class="col03">合计(不含运费)：<span>¥</span><em>{{ total_price }}</em><br>共计<b>{{ total }}</b>件商品</li>
+		<li class="col04"><a href="/">去结算</a></li>
+	</ul>
+
+	<!-- foot -->
+    <div class="foot">
+        <img src="/static/img/title2.png">
+        <p>来校园二货，你的闲置能换钱！</p>
+        <span>全国最大最活跃的校园闲置物品交换平台</span>
+    </div>
+    <address>
+        Written by <a href="#">Resulte</a>.<br>
+            Visit us at:<br>
+            jxsf University<br>
+            tel：18××××××××69
+    </address>
+
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/file.js"></script>
+	
+</body>
+</html>

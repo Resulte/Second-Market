@@ -1,0 +1,15 @@
+.list_body caption{
+    font-family: "Microsoft Yahei";
+    font-size: 24px;
+    color: #504A4D;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.list_body {
+    padding: 11px;
+}
+
+.pagination {
+    margin-left: 260px;
+}

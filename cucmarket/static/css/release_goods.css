@@ -1,0 +1,49 @@
+.release {
+    width: 1000px;
+    height: 1100px;
+    border: 2px solid #e4ecf3;
+    box-shadow: 1px 2px 3px #f2f6f8;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.text-center {
+    font-size: 24px;
+    font-weight: 800;
+    font-family: "Microsoft Yahei";
+    color: #504A4D;
+    margin-bottom: 20px;
+    margin: 20px;
+}
+
+ol>li>p {
+    font-size: 18px;
+    font-family: "Microsoft Yahei";
+    color: #504A4D;
+    margin-bottom: 20px;
+}
+
+.release input {
+    width: 400px;
+    height: 30px;
+    margin-bottom: 30px;
+}
+
+.release select {
+    width: 400px;
+    margin-bottom: 30px;
+}
+
+.release textarea {
+    width: 800px;
+}
+
+.tijiao {
+    margin: 80px;
+    margin-top: 10px;
+    width: 100px;
+    position: relative;
+    left: 650px;
+}
